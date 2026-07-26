@@ -12,9 +12,12 @@ const bookMeeting = async () => {
 
 
   try {
-  const res = await fetch("https://meeting-api-demo-aadnbjbnebgghua2.centralindia-01.azurewebsites.net/api/meeting/book", {
+    // https://meeting-api-demo-aadnbjbnebgghua2.centralindia-01.azurewebsites.net/api/meeting/book
+  const res = await fetch("https://meetingapiinstance1.azure-api.net/meetingapi/api/Meeting/book", {
     method: "POST",
-    headers: { "Content-Type": "application/json" }, // ✅ fixed
+    headers: { "Content-Type": "application/json", 
+                "Ocp-Apim-Subscription-Key": "dadef69d7cdf446d8c5a557aee85bede"
+    }, // ✅ fixed
     body: JSON.stringify({ name, date }),
   });
 
